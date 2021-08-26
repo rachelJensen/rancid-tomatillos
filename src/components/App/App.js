@@ -21,13 +21,15 @@ class App extends Component {
   }
 
   findMovie = (id) => {
-    this.setState({movieID: id})
+    // console.log('id <<<<<<:', id);
+    this.setState({movieID: id})// changes the conditional rendering for movieContainer
     this.hanldeSingleMovie(id)
   }
   
   hanldeSingleMovie = (id) => {
     singleMovie(id)
-      .then(data => console.log('singlemovie :', data.movie))
+      .then(data => data)
+      .then(data => this.setState({ movieID: data.movie}))
   }
 
   render() {
@@ -35,7 +37,7 @@ class App extends Component {
       <main>
         <Header />
         {!this.state.movieID &&  <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />}
-        {this.state.movieID && <MovieDetailer  />}
+        {this.state.movieID && <MovieDetailer movie={this.state.movieID} />}
       </main>
     );
   }
