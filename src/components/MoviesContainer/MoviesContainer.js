@@ -1,7 +1,7 @@
 import './MoviesContainer.css';
 import MoviePoster from '../MoviePoster/MoviePoster';
 
-const MoviesContainer = ({ movies }) => {
+const MoviesContainer = ({ movies, findMovie}) => {
   const movieCards = movies.map((movie) => {
     return (
       <MoviePoster
@@ -12,6 +12,7 @@ const MoviesContainer = ({ movies }) => {
         rating={movie.average_rating}
         release={movie.release_date}
         key={movie.id}
+        findMovie={findMovie}
       />
     );
   });
