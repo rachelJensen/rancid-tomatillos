@@ -22,6 +22,10 @@ class App extends Component {
 
   findMovie = (id) => {
     this.setState({movieID: id})
+    this.hanldeSingleMovie(id)
+  }
+  
+  hanldeSingleMovie = (id) => {
     singleMovie(id)
       .then(data => console.log('singlemovie :', data.movie))
   }
