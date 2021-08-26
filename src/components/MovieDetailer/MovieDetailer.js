@@ -1,17 +1,23 @@
 import './MovieDetailer.css';
+import { singleMovie } from '../../apiCalls'
 
-const MovieDetailer = ({ movieID }) => {
+const MovieDetailer = ({ movie }) => {
+ 
+ 
+
+    // console.log(movie, ': mnovie inside movieDetailer');
+
   return (
     <section>
-      <img className='backdrop' src={movieID.backdrop_path} alt={movieID.title}/>
-      <h2>{movieID.title}</h2>
-      <p className='release'>{movieID.release_date}</p>
-      <p className='overview'>{movieID.overview}</p>
-      <p className='rating'>{movieID.average_rating}</p>
-      <p className='budget'>{movieID.budget}</p>
+      <img className='backdrop' src={movie.backdrop_path} alt={movie.title}/>
+      <h2>{movie.title}</h2>
+      <p className='release'>{movie.release_date}</p>
+      <p className='overview'>{movie.overview}</p>
+      <p className='rating'>{movie.average_rating}</p>
+      <p className='budget'>{movie.budget}</p>
       <p className='genres'>Drama, Comedy, Whatever</p>
-      <p className='runtime'>{movieID.runtime}</p>
-      <p className='tagline'>{movieID.tagline}</p>
+      <p className='runtime'>{movie.runtime}</p>
+      <p className='tagline'>{movie.tagline}</p>
     </section>
   )
 }
