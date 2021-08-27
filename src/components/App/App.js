@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       movies: [],
       movieID: 0,
-      singleMovie: {}
+      movie: {}
     };
   }
 
@@ -22,12 +22,18 @@ class App extends Component {
   }
 
   findMovie = (id) => {
+    // console.log('id <<<<<<:', id);
+    this.setState({movieID: id})// changes the conditional rendering for movieContainer
     this.hanldeSingleMovie(id)
   }
   
   hanldeSingleMovie = (id) => {
     singleMovie(id)
-      .then(data => this.setState({ singleMovie: data.movie}))
+      // .then(data => data)
+      .then(data => this.setState({ movie: data.movie}))
+      // .then(data => console.log(data, ': DATA INSIDE HANDLESINGLEMOVIE'))
+      // .then(data => this.setState({ singleMovie: data }))
+      // .then(console.log(this.state.singleMovie))
   }
 
   render() {
@@ -35,7 +41,7 @@ class App extends Component {
       <main>
         <Header />
         {!this.state.movieID &&  <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />}
-        {this.state.movieID && <MovieDetailer movie={this.state.singleMovie} />}
+        {this.state.movieID && <MovieDetailer movie={this.state.movie} />}
       </main>
     );
   }
