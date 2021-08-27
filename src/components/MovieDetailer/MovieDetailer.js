@@ -4,9 +4,6 @@ import { singleMovie } from '../../apiCalls'
 const MovieDetailer = ({ movie }) => {
  
  
-
-    // console.log(movie, ': mnovie inside movieDetailer');
-
   return (
     <section>
       <img className='backdrop' src={movie.backdrop_path} alt={movie.title}/>
