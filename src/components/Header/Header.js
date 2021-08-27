@@ -1,10 +1,12 @@
 import './Header.css';
 
-const Header = () => {
+const Header = ({ reload }) => {
+
   return (
-    <header>
-      <h1>Rancid Tomatillos</h1>
-    </header>
+
+      <header >
+        <button className="homeBtn" onClick={reload }><h1>Rancid Tomatillos</h1></button>
+      </header>
   );
 };
 
