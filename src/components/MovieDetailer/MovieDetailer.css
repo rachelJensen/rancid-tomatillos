@@ -1,3 +1,19 @@
+.movie-info {
+  position: relative;
+}
+
 .backdrop {
-  width: 100vw;
+  width: 100%;
+  z-index: -1;
+}
+
+.details-box {
+  height: 40%;
+  width: 60%;
+  position: absolute;
+  bottom: 5vh;
+  left: 5vh;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 0px 20px 20px 20px;
 }
