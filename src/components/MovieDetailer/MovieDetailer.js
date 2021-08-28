@@ -1,5 +1,4 @@
 import './MovieDetailer.css';
-import { singleMovie } from '../../apiCalls'
 
 const MovieDetailer = ({ movie }) => {
  
@@ -22,4 +21,3 @@ const MovieDetailer = ({ movie }) => {
 }
 
 export default MovieDetailer;
-
