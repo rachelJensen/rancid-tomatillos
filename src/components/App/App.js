@@ -3,21 +3,21 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import MovieDetailer from '../MovieDetailer/MovieDetailer';
-import { allMovies, singleMovie } from '../../apiCalls'
+import { allMovies, singleMovie, singleMoviesVideos } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      movieID: 0,
+      movieID: '',
       movie: {},
       error: ''
     };
   }
 
   reload = () => {
-    this.setState({ movieID: 0 })//555643
+    this.setState({ movieID: '' })
   }
 
   componentDidMount = () => {
@@ -33,9 +33,10 @@ class App extends Component {
     
   hanldeSingleMovie = (id) => {
       singleMovie(id)
-      .then(data => this.setState({ movie: data.movie}))
-      .catch(err => console.log(err))
-      // .catch(err => this.setState({ error: err}))
+        .then(data => this.setState({ movie: data.movie}))
+        .catch(err => console.log(err))
+      singleMoviesVideos(id)
+        .then(data => console.log(data, ' :video data'))
   }
 
   error500 = () => {
