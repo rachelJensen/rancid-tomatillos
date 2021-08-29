@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import MovieDetailer from '../MovieDetailer/MovieDetailer';
-import { allMovies, singleMovie, singleMoviesVideos } from '../../apiCalls'
+import { allMovies, singleMovie, singleMoviesVideos } from '../../apiCalls';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class App extends Component {
   findMovie = (id) => {
       this.setState({movieID: id})
       this.hanldeSingleMovie(id)
+      //this is where route id is defined?
     }
     
   hanldeSingleMovie = (id) => {
@@ -48,11 +50,17 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Header reload={this.reload} />
-        {!this.state.movieID &&  <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />}
-        {(this.state.movieID && !this.state.error) && <MovieDetailer movie={this.state.movie} />}
-        {(!this.state.movieID && this.state.error) && this.error500()}
+        <Header  reload={this.reload}/> 
+        <Route exact path='/' render={() => {return (<MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />)} } />
+        <Route exact path={`/:${this.state.movieID}`} render={() => {return (<MovieDetailer movie={this.state.movie} />)}}/>
       </main>
+
+      // <main>
+      //   <Header reload={this.reload} />
+      //   {!this.state.movieID &&  <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />}
+      //   {(this.state.movieID && !this.state.error) && <MovieDetailer movie={this.state.movie} />}
+      //   {(!this.state.movieID && this.state.error) && this.error500()}
+      // </main>
     );
   }
 }
