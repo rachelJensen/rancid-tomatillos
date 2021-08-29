@@ -17,10 +17,6 @@ class App extends Component {
     };
   }
 
-  reload = () => {
-    this.setState({ movieID: '' })
-  }
-
   componentDidMount = () => {
     allMovies()
       .then(data => this.setState({ movies: data.movies}))
@@ -51,8 +47,8 @@ class App extends Component {
     return (
       <main>
         <Header  reload={this.reload}/> 
-        <Route exact path='/' render={() => {return (<MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />)} } />
-        <Route exact path={`/:${this.state.movieID}`} render={() => {return (<MovieDetailer movie={this.state.movie} />)}}/>
+        <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
+        <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} />} />
       </main>
 
       // <main>
