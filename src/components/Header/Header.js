@@ -1,12 +1,13 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
 
-const Header = ({ reload }) => {
-
+const Header = () => {
   return (
-
+    <Link to='/'>
       <header >
-        <button className="homeBtn" onClick={reload }><h1>Rancid Tomatillos</h1></button>
+        <button className="homeBtn" ><h1>Rancid Tomatillos</h1></button>
       </header>
+    </Link>
   );
 };
 
