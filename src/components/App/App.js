@@ -20,13 +20,12 @@ class App extends Component {
   componentDidMount = () => {
     allMovies()
       .then(data => this.setState({ movies: data.movies}))
-      .catch(err => this.setState({ error: err}))
+      .catch(err => this.setState({ error: err.message}))
     }
     
   findMovie = (id) => {
       this.setState({movieID: id})
       this.hanldeSingleMovie(id)
-      //this is where route id is defined?
     }
     
   hanldeSingleMovie = (id) => {
@@ -48,7 +47,7 @@ class App extends Component {
       <main>
         <Header  reload={this.reload}/> 
         <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
-        <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} />} />
+        <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} />} />
       </main>
 
       // <main>

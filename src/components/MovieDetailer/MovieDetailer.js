@@ -1,8 +1,14 @@
 import './MovieDetailer.css';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 
-const MovieDetailer = ({ movie }) => {
- 
- 
+const MovieDetailer = ({ movie, hanldeSingleMovie }) => {
+  const location = useLocation().pathname.slice(1)
+
+  useEffect(() => {
+    hanldeSingleMovie(location)
+  }, [])
+
   return (
     <section className='movie-info'>
       <img className='backdrop' src={movie.backdrop_path} alt={movie.title}/>
