@@ -20,14 +20,12 @@ class App extends Component {
   componentDidMount = () => {
     allMovies()
       .then(data => this.setState({ movies: data.movies}))
-      // .catch(err => this.setState({ error: err}))
       .catch(err => this.setState({ error: err.message}))
     }
     
   findMovie = (id) => {
       this.setState({movieID: id})
       this.hanldeSingleMovie(id)
-      //this is where route id is defined?
     }
     
   hanldeSingleMovie = (id) => {
