@@ -13,14 +13,15 @@ class App extends Component {
       movies: [],
       movieID: '',
       movie: {},
-      error: ''
+      error: {}
     };
   }
 
   componentDidMount = () => {
     allMovies()
       .then(data => this.setState({ movies: data.movies}))
-      .catch(err => this.setState({ error: err}))
+      // .catch(err => this.setState({ error: err}))
+      .catch(err => this.setState({ error: err.message}))
     }
     
   findMovie = (id) => {
