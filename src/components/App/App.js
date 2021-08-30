@@ -13,7 +13,7 @@ class App extends Component {
       movies: [],
       movieID: '',
       movie: {},
-      error: {}
+      error: ''
     };
   }
 
@@ -49,7 +49,7 @@ class App extends Component {
       <main>
         <Header  reload={this.reload}/> 
         <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
-        <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} />} />
+        <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} />} />
       </main>
 
       // <main>
