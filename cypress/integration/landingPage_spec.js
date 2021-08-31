@@ -1,6 +1,6 @@
 describe('Main Page rendering', () => {
   beforeEach(() => {
-    cy.fixture('mockMovies').then((movies) => {
+    cy.fixture('mockMovies.json').then((movies) => {
       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', movies)
     })
     cy.visit('http://localhost:3000');
