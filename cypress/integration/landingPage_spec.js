@@ -8,7 +8,10 @@ describe('Main Page rendering', () => {
 
   describe('Should be able to render main page', () => {
     it('should contain a header', () => {
-      expect(true).to.equal(true)
+      cy.get('header').contains('Rancid Tomatillos')
+      })
+      it('should render three posters to the main screen', () => {
+      cy.get('article').should('have.length', 3)
     })
   })
 })
