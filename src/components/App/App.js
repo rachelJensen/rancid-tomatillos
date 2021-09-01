@@ -20,7 +20,7 @@ class App extends Component {
   componentDidMount = () => {
     allMovies()
       .then(data => this.setState({ movies: data.movies}))
-      .catch(err => this.setState({ error: err.message}))
+      .catch(err => console.log(err, ' :err from app.js'))
     }
     
   findMovie = (id) => {
@@ -49,13 +49,6 @@ class App extends Component {
         <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
         <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} />} />
       </main>
-
-      // <main>
-      //   <Header reload={this.reload} />
-      //   {!this.state.movieID &&  <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />}
-      //   {(this.state.movieID && !this.state.error) && <MovieDetailer movie={this.state.movie} />}
-      //   {(!this.state.movieID && this.state.error) && this.error500()}
-      // </main>
     );
   }
 }
