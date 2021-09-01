@@ -10,8 +10,15 @@ describe('Main Page rendering', () => {
     it('should contain a header', () => {
       cy.get('header').contains('Rancid Tomatillos')
       })
-      it('should render three posters to the main screen', () => {
+    it('should render three posters to the main screen', () => {
       cy.get('article').should('have.length', 3)
+    })
+  })
+  describe('As a user, i should be able to load an individual movie details', () => {
+    it('should load individual movie\'s details', () => {
+      cy
+        .get('#\\36 94919 > .poster').click()
+        .url().should('eq', 'http://localhost:3000/694919')
     })
   })
 })
