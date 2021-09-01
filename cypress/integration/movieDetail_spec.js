@@ -48,3 +48,25 @@ describe('Movie Page rendering', () => {
     })
   })
 })
+
+describe('As a user, i should be able to return to the home page from the movie page', () => {
+  beforeEach(() => {
+    cy.fixture('mockMovies.json').then((movies) => {
+      cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', movies)
+    })
+  })  
+  
+  it('should load home page from header click', () => {
+    cy
+      .get('header').click()
+      .url().should('eq', 'http://localhost:3000/')
+  })
+
+  it('should go back to the last page when back button is clicked', () => {
+    
+    cy
+      .go('back')
+      .url().should('eq', 'http://localhost:3000/627290')
+  })
+})
+
