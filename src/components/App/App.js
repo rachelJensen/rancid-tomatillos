@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import MovieDetailer from '../MovieDetailer/MovieDetailer';
+import Error404 from '../Error404/Error404';
 import { allMovies, singleMovie, singleMoviesVideos } from '../../apiCalls';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -47,9 +48,13 @@ class App extends Component {
     return (
       <main>
         <Header  reload={this.reload}/> 
-        <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
-        <Route exact path='/:id' render={({ match }) => {
-        return <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} />} }/>
+        <Switch>
+          <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
+          <Route exact path='/:id' render={({ match }) => {
+          return <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} />} }/>
+          {/* <Route path='*' exact={true} component={Error404}/> */}
+          {/* <Redirect to='/'/> */}
+        </Switch>
       </main>
     );
   }
