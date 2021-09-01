@@ -21,6 +21,7 @@ class App extends Component {
     allMovies()
       .then(data => this.setState({ movies: data.movies}))
       .catch(err => console.log(err, ' :err from app.js'))
+
     }
     
   findMovie = (id) => {
@@ -47,7 +48,8 @@ class App extends Component {
       <main>
         <Header  reload={this.reload}/> 
         <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
-        <Route exact path='/:id' render={() => <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} />} />
+        <Route exact path='/:id' render={({ match }) => {
+        return <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} />} }/>
       </main>
     );
   }

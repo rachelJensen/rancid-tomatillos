@@ -1,9 +1,7 @@
 import './MovieDetailer.css';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router';
 
-const MovieDetailer = ({ movie, hanldeSingleMovie }) => {
-  const location = useLocation().pathname.slice(1)
+const MovieDetailer = ({ movie, hanldeSingleMovie, location }) => {
 
   useEffect(() => {
     hanldeSingleMovie(location)
