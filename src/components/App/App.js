@@ -46,14 +46,13 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <Header  reload={this.reload}/> 
+      <main className="main">
+        <Header  /> 
         <Switch>
           <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
           <Route exact path='/:id' render={({ match }) => {
           return <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} />} }/>
-          {/* <Route path='*' exact={true} component={Error404}/> */}
-          {/* <Redirect to='/'/> */}
+          
         </Switch>
       </main>
     );
