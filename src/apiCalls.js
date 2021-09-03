@@ -1,6 +1,9 @@
-export const allMovies = () => {
-  return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-  // .then(res => res.json())
+const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies/"
+
+export const fetchData = (endpoint) => {
+  let formatEndpoint = endpoint ? endpoint : ''
+
+  return fetch(`${url}${formatEndpoint}`)
   .then(res => {
     if(res.ok) {
       return res.json()
@@ -10,20 +13,5 @@ export const allMovies = () => {
       throw new Error('400 error')
     }
   })
-  .then(data => data)
-}
-
-// export const allMovies = await
-
-export const singleMovie = (id) => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(res => res.json())
-    .then(data => data)
-  
-}
-
-export const singleMoviesVideos = (id) => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-  .then(res => res.json())
   .then(data => data)
 }
