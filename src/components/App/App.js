@@ -12,9 +12,9 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      movieID: '',
-      movie: {},
-      error: ''
+      // movieID: '',
+      // movie: {},
+      // error: ''
     };
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
   hanldeSingleMovie = (id) => {
       fetchData(id)
         .then(data => this.setState({ movie: data.movie}))
-        .catch(err => console.log(err))
+        .catch(err => this.setState({error: err}))
       fetchData(`${id}/videos`)
         .then(data => console.log(data, ' :video data'))
   }
@@ -53,7 +53,7 @@ class App extends Component {
           <Route exact path='/movies' render={() => 
             <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
           <Route exact path='/movies/:id' render={({ match }) => 
-            <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} /> }/>
+            <MovieDetailer id={parseInt(match.params.id)}/> }/>
           <Route path='*' render={() => 
             <Error404 />} />
         </Switch>
