@@ -27,7 +27,6 @@ class App extends Component {
     
   findMovie = (id) => {
       this.setState({movieID: id})
-      this.hanldeSingleMovie(id)
     }
     
   hanldeSingleMovie = (id) => {
@@ -49,10 +48,15 @@ class App extends Component {
       <main className="main">
         <Header  /> 
         <Switch>
-          <Route exact path='/' render={() => <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
-          <Route exact path='/:id' render={({ match }) => {
-          return <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} />} }/>
-          
+          <Route exact path="/">
+            <Redirect to="/movies" />
+          </Route>
+          <Route exact path='/movies' render={() => 
+            <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
+          <Route exact path='/movies/:id' render={({ match }) => 
+            <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} /> }/>
+          <Route path='*' render={() => 
+            <Error404 />} />
         </Switch>
       </main>
     );
