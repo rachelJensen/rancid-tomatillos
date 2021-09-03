@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import MovieDetailer from '../MovieDetailer/MovieDetailer';
 import Error404 from '../Error404/Error404';
-import { allMovies, singleMovie, singleMoviesVideos } from '../../apiCalls';
+import { fetchData } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
@@ -19,10 +19,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    allMovies()
+    fetchData()
       .then(data => this.setState({ movies: data.movies}))
       .catch(err => console.log(err, ' :err from app.js'))
-
     }
     
   findMovie = (id) => {
@@ -30,10 +29,10 @@ class App extends Component {
     }
     
   hanldeSingleMovie = (id) => {
-      singleMovie(id)
+      fetchData(id)
         .then(data => this.setState({ movie: data.movie}))
         .catch(err => console.log(err))
-      singleMoviesVideos(id)
+      fetchData(`${id}/videos`)
         .then(data => console.log(data, ' :video data'))
   }
 
@@ -64,3 +63,11 @@ class App extends Component {
 }
 
 export default App;
+
+
+// - Styling for home page (Neon Lights)
+// - Refactor ApiCalls to one function
+// - Error Handling for ApiCalls
+// - Scrub Data off api call method inside app.js?
+// - Add videos to movieDetailer.js 
+// - Remove useEffect() from movieDetailer.js
