@@ -1,4 +1,9 @@
 .poster {
-  height: 25vh;
+  height: 45vh;
   padding: 20px;
 }
+
+.poster:hover {
+  transform: scale(1.5);
+}
+

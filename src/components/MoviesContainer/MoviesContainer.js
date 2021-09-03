@@ -1,5 +1,6 @@
 import './MoviesContainer.css';
 import MoviePoster from '../MoviePoster/MoviePoster';
+import Hero from '../Hero/Hero';
 
 const MoviesContainer = ({ movies, findMovie}) => {
   const movieCards = movies.map((movie) => {
@@ -17,7 +18,14 @@ const MoviesContainer = ({ movies, findMovie}) => {
     );
   });
 
-  return <section className="container">{movieCards}</section>;
+  return (
+    <div className="background">
+      {/* <Hero /> */}
+      <section className="container">
+        {movieCards}
+      </section>
+    </div>
+  )
 };
 
 export default MoviesContainer;

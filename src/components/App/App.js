@@ -45,8 +45,8 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <Header  reload={this.reload}/> 
+      <main className="main">
+        <Header  /> 
         <Switch>
           <Route exact path="/">
             <Redirect to="/movies" />
