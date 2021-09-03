@@ -19,8 +19,8 @@ const MoviesContainer = ({ movies, findMovie}) => {
   });
 
   return (
-    <div>
-      <Hero />
+    <div className="background">
+      {/* <Hero /> */}
       <section className="container">
         {movieCards}
       </section>
