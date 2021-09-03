@@ -7,11 +7,9 @@ export const fetchData = (endpoint) => {
   .then(res => {
     if(res.ok) {
       return res.json()
-    } else if (res.status >= 500){
-      throw new Error('500 error')
     } else {
-      throw new Error('400 error')
+      return Promise.reject(`error ${res.status}`)
     }
   })
-  .then(data => data)
+  // .then(data => data)
 }
