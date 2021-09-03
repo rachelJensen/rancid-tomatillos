@@ -8,7 +8,7 @@ class MovieDetailer extends Component {
     this.state = {
       movie: {},
       video: [],
-      error: ''
+      error: '',
     }
   }
 
@@ -16,6 +16,10 @@ class MovieDetailer extends Component {
     fetchData(this.props.id)
         .then(data => this.setState({ movie: data.movie}))
         .catch(err => this.setState({ error: err }))
+    fetchData(`${this.props.id}/videos`)
+        .then(data => console.log(data, ' :video data'))
+        .catch(err => console.log(err))
+        //decide how to handle if no video data comes back
   }
  
   render = () => {
