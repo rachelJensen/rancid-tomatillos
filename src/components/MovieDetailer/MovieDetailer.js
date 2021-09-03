@@ -1,8 +1,8 @@
 import './MovieDetailer.css';
 import { useEffect } from 'react';
 
-const MovieDetailer = ({ movie, hanldeSingleMovie, location }) => {
-
+const MovieDetailer = ({ movie, hanldeSingleMovie, location, videos }) => {
+  console.log(videos.videos)
   useEffect(() => {
     hanldeSingleMovie(location)
   }, [])
