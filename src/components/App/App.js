@@ -12,9 +12,6 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      // movieID: '',
-      // movie: {},
-      // error: ''
     };
   }
 
@@ -24,24 +21,6 @@ class App extends Component {
       .catch(err => console.log(err, ' :err from app.js'))
     }
     
-  findMovie = (id) => {
-      this.setState({movieID: id})
-    }
-    
-  hanldeSingleMovie = (id) => {
-      fetchData(id)
-        .then(data => this.setState({ movie: data.movie}))
-        .catch(err => this.setState({error: err}))
-      fetchData(`${id}/videos`)
-        .then(data => console.log(data, ' :video data'))
-  }
-
-  error500 = () => {
-    return ( 
-      <h1>There is a problem with the server. Please reload or check back at a later time.</h1>//style me
-    )
-  }
-
   render() {
     return (
       <main className="main">
@@ -71,3 +50,22 @@ export default App;
 // - Scrub Data off api call method inside app.js?
 // - Add videos to movieDetailer.js 
 // - Remove useEffect() from movieDetailer.js
+
+
+// findMovie = (id) => {
+//     this.setState({movieID: id})
+//   }
+  
+// hanldeSingleMovie = (id) => {
+//     fetchData(id)
+//       .then(data => this.setState({ movie: data.movie}))
+//       .catch(err => this.setState({error: err}))
+//     fetchData(`${id}/videos`)
+//       .then(data => console.log(data, ' :video data'))
+// }
+
+// error500 = () => {
+//   return ( 
+//     <h1>There is a problem with the server. Please reload or check back at a later time.</h1>//style me
+//   )
+// }
