@@ -14,6 +14,7 @@ class App extends Component {
       movies: [],
       movieID: '',
       movie: {},
+      movieVideos: {},
       error: ''
     };
   }
@@ -33,7 +34,7 @@ class App extends Component {
         .then(data => this.setState({ movie: data.movie}))
         .catch(err => console.log(err))
       fetchData(`${id}/videos`)
-        .then(data => console.log(data, ' :video data'))
+        .then(data => this.setState({ movieVideos: data}))
   }
 
   error500 = () => {
@@ -53,7 +54,7 @@ class App extends Component {
           <Route exact path='/movies' render={() => 
             <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
           <Route exact path='/movies/:id' render={({ match }) => 
-            <MovieDetailer movie={this.state.movie} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} /> }/>
+            <MovieDetailer movie={this.state.movie} videos={this.state.movieVideos} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} /> }/>
           <Route path='*' render={() => 
             <Error404 />} />
         </Switch>
@@ -63,11 +64,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// - Styling for home page (Neon Lights)
-// - Refactor ApiCalls to one function
-// - Error Handling for ApiCalls
-// - Scrub Data off api call method inside app.js?
-// - Add videos to movieDetailer.js 
-// - Remove useEffect() from movieDetailer.js
