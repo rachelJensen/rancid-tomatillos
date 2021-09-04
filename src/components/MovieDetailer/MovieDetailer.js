@@ -2,6 +2,7 @@ import './MovieDetailer.css';
 import React, { Component } from 'react';
 import { fetchData } from '../../apiCalls';
 import { formatMovieDetails } from '../../Utils';
+import { Redirect } from 'react-router-dom';
 
 class MovieDetailer extends Component { 
   constructor() {
@@ -24,6 +25,9 @@ class MovieDetailer extends Component {
   }
  
   render = () => {
+    if (this.props.id === NaN || this.state.error) {
+      return  <Redirect to='/not-found' />
+    }
 
     return (
       <section className='movie-info'>
