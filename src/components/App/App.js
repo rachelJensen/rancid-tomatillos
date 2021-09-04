@@ -42,3 +42,9 @@ class App extends Component {
 }
 
 export default App;
+
+// Rachel - error handling (stlying eror page)
+// Steven - stlying on home page with neon 
+// Steven - embed movies onto page
+// Rachel - cypress testing
+// - proptypes
