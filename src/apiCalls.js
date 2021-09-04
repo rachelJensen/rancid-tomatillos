@@ -1,3 +1,4 @@
+import { formatMovieDetails } from "./Utils"
 const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies/"
 
 export const fetchData = (endpoint) => {

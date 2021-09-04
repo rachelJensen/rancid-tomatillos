@@ -1,12 +1,21 @@
 import './MovieDetailer.css';
 import { useEffect } from 'react';
+import { formatMovieDetails } from '../../Utils';
 
-const MovieDetailer = ({ movie, hanldeSingleMovie, location, videos }) => {
-  console.log(videos.videos)
+const MovieDetailer = ({ formatData, movie, hanldeSingleMovie, location, videos }) => {
+  
+  // console.log(videos.videos)
+  
   useEffect(() => {
+    // formatData()
     hanldeSingleMovie(location)
   }, [])
 
+// formatMovieDetails(movie)
+  // movie = formatMovieDetails(movie)
+  // let  test = formatMovieDetails(movie)
+
+  // console.log(test, ' :test variable moviedetailer');
   return (
     <section className='movie-info'>
       <img className='backdrop' src={movie.backdrop_path} alt={movie.title}/>

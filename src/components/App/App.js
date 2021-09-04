@@ -6,6 +6,7 @@ import MovieDetailer from '../MovieDetailer/MovieDetailer';
 import Error404 from '../Error404/Error404';
 import { fetchData } from '../../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import {formatMovieDetails} from '../../Utils'
 
 class App extends Component {
   constructor() {
@@ -37,6 +38,15 @@ class App extends Component {
         .then(data => this.setState({ movieVideos: data}))
   }
 
+  // fetchSingleMovieVideos = (id) => {
+  //   fetchData(`${id}/videos`)
+  //       .then(data => this.setState({ movieVideos: data}))
+  // }
+  // formatData = () => {
+  //   console.log('EUREKA')
+  //   // formatMovieDetails(this.state.movie)
+  // }
+
   error500 = () => {
     return ( 
       <h1>There is a problem with the server. Please reload or check back at a later time.</h1>//style me
@@ -54,7 +64,7 @@ class App extends Component {
           <Route exact path='/movies' render={() => 
             <MoviesContainer movies={this.state.movies} findMovie={this.findMovie} />} />
           <Route exact path='/movies/:id' render={({ match }) => 
-            <MovieDetailer movie={this.state.movie} videos={this.state.movieVideos} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} /> }/>
+            <MovieDetailer movie={(this.state.movie)} videos={this.state.movieVideos} hanldeSingleMovie={this.hanldeSingleMovie} location={match.params.id} /> }/>
           <Route path='*' render={() => 
             <Error404 />} />
         </Switch>
