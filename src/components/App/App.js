@@ -33,6 +33,8 @@ class App extends Component {
             <MoviesContainer movies={this.state.movies} />} />
           <Route exact path='/movies/:id' render={({ match }) => 
             <MovieDetailer id={parseInt(match.params.id)}/> }/>
+          <Route exact path='/not-found' render={() => 
+            <Error404 />} />
           <Route path='*' render={() => 
             <Error404 />} />
         </Switch>
