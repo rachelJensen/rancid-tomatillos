@@ -1,36 +1,45 @@
 import './MovieDetailer.css';
-import { useEffect } from 'react';
-import { formatMovieDetails } from '../../Utils';
+import React, { Component } from 'react';
+import { fetchData } from '../../apiCalls';
 
-const MovieDetailer = ({ formatData, movie, hanldeSingleMovie, location, videos }) => {
-  
-  // console.log(videos.videos)
-  
-  useEffect(() => {
-    // formatData()
-    hanldeSingleMovie(location)
-  }, [])
+class MovieDetailer extends Component { 
+  constructor() {
+    super();
+    this.state = {
+      movie: {},
+      video: [],
+      error: '',
+    }
+  }
 
-// formatMovieDetails(movie)
-  // movie = formatMovieDetails(movie)
-  // let  test = formatMovieDetails(movie)
-
-  // console.log(test, ' :test variable moviedetailer');
-  return (
-    <section className='movie-info'>
-      <img className='backdrop' src={movie.backdrop_path} alt={movie.title}/>
-      <div className='details-box'>
-        <h2>{movie.title}</h2>
-        <p className='tagline'>{movie.tagline}</p>
-        <p className='genres'>Drama, Comedy, Whatever</p>
-        <p className='release'>{movie.release_date}</p>
-        <p className='overview'>{movie.overview}</p>
-        <p className='rating'>{movie.average_rating}</p>
-        <p className='budget'>{movie.budget}</p>
-        <p className='runtime'>Runtime: {movie.runtime} min</p>
-      </div> 
-    </section>
-  )
+  componentDidMount = () => {
+    fetchData(this.props.id)
+        .then(data => this.setState({ movie: data.movie}))
+        .catch(err => this.setState({ error: err }))
+    fetchData(`${this.props.id}/videos`)
+        .then(data => console.log(data, ' :video data'))
+        .catch(err => console.log(err))
+        //decide how to handle if no video data comes back
+  }
+ 
+  render = () => {
+    
+    return (
+      <section className='movie-info'>
+        <img className='backdrop' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
+        <div className='details-box'>
+          <h2>{this.state.movie.title}</h2>
+          <p className='tagline'>{this.state.movie.tagline}</p>
+          <p className='genres'>Drama, Comedy, Whatever</p>
+          <p className='release'>{this.state.movie.release_date}</p>
+          <p className='overview'>{this.state.movie.overview}</p>
+          <p className='rating'>{this.state.movie.average_rating}</p>
+          <p className='budget'>{this.state.movie.budget}</p>
+          <p className='runtime'>Runtime: {this.state.movie.runtime} min</p>
+        </div> 
+      </section>
+    )
+  }
 }
 
 export default MovieDetailer;
