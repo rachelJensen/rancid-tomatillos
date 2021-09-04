@@ -1,8 +1,10 @@
 export const formatMovieDetails = (data) => {
-  console.log('test')
-  console.log(data, 'dtaaaa<<<<<<<<<<>>>')
-  // data.genres = data.genres.join(', ')
-  // data.movie.average_rating = data.movie.average_rating.toFixed(1)
-  // data.movie.release_date = data.movie.release_date.split('-').shift();
+  data.genres = data.genres.join(', ')
+  data.average_rating = data.average_rating.toFixed(1)
+  data.release_date = data.release_date.split('-').shift();
+  data.revenue = data.revenue  ? `Revenue: $${data.revenue}` : ''
+  data.budget = data.budget  ? `Budget: $${data.budget}` : ''
+  data.genres = data.genres  ? `Genre(s): ${data.genres}` : ''
+  data.runtime = data.runtime  ? `Runtime: ${data.runtime} min` : ''
   return data
 }
