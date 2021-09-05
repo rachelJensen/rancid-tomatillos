@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-h2, h3 {
+.neon-error {
   color: white;
   margin: 10px;
   animation: pulsate 0.11s ease-in-out infinite alternate;
