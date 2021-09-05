@@ -21,33 +21,18 @@ class MovieDetailer extends Component {
       .catch(err => this.setState({ error: err }))
     fetchData(`${this.props.id}/videos`)
       .then(data => this.setState({ video: data.videos}))
-    // .then(data => console.log(this.state.video, ' :data inside moveidetailer'))
       .catch(err => console.log(err))
-      //decide how to handle if no video data comes back
   }
 
-  // componentDidUpdate = () => {
-  //   if(this.state.video) {
-  //     console.log(this.state.video, ' :videostate inside if conditional')
-  //     console.log('videoExist logged if conditional');
-  //     return 
-  //   } else {
-  //     console.log(this.state.video, 'videoExist logged else conditional');
-      
-  //     return <ReactPlayer url={`https://www.youtube.com/watch?v=${this.state.video[0].key}`} />
-  //   }
-  // }
  
   render = () => {
     if (this.props.id === NaN || this.state.error) {
       return  <Redirect to='/not-found' />
     }
-    // 01ON04GCwKs
+
     return (
       <section className='movie-info'>
-        {console.log(this.state.video[0], 'this.state.video inside moviedetailer render')} 
-        {/* {this.videoExist()} */}
-        <ReactPlayer url={`https://www.youtube.com/watch?v=01ON04GCwKs`} />
+        {this.state.video[0] && <ReactPlayer url={`https://www.youtube.com/watch?v=${this.state.video[0].key}`} />}
         <img className='backdrop' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
         <div className='details-box'>
           <h2>{this.state.movie.title}</h2>
