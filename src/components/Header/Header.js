@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header >
       <Link to='/'>
-       <h1>Rancid Tomatillos</h1>
+       <h1> MOVIE NIGHT </h1>
       </Link>
     </header>
   );

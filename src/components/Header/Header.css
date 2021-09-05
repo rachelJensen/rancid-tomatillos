@@ -3,14 +3,43 @@ header {
   justify-content: center;
   position: fixed;
   top: 0;
-  background: grey;
+  background: black;
   width: 100%;
   cursor: pointer;
   text-decoration: none;
   z-index: +1;
 }
 
+h1 {
+  /* font-family: 'Pacifico', cursive; */
+  /* font-family: 'Dancing Script', cursive; */
+  /* font-family: "Sacramento", sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  color: white;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe;
+
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem yellow,
+              0 0 0.8rem yellow,
+              0 0 2.8rem yellow,
+              inset 0 0 1.3rem yellow; 
+}
+
 .homeBtn {
   border:none;
   background:none;
+  text-decoration: none;
 }
