@@ -18,7 +18,7 @@ describe('Main Page rendering', () => {
     it('should load individual movie\'s details', () => {
       cy
         .get('#\\36 94919 > .poster').click()
-        .url().should('eq', 'http://localhost:3000/694919')
+        .url().should('eq', 'http://localhost:3000/movies/694919')
     })
   })
 })

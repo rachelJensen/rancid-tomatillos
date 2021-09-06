@@ -3,7 +3,7 @@ describe('Movie Page rendering', () => {
     cy.fixture('mockSingleMovie').then((movie) => {
       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/627290', movie)
     })
-    cy.visit('http://localhost:3000/627290');
+    cy.visit('http://localhost:3000/movies/627290');
   });
 
   describe('Should be able to render movie page', () => {
@@ -24,7 +24,7 @@ describe('Movie Page rendering', () => {
     })
 
     it('should a release date', () => {
-      cy.get('.release').contains('2020-09-02')
+      cy.get('.release').contains('2020')
     })
 
     it('should have an overview', () => {
@@ -46,6 +46,12 @@ describe('Movie Page rendering', () => {
     it('should have a movie image backdrop', () => {
       cy.get('.backdrop').should('be.visible')
     })
+
+    it('should have a video player', () => {
+     cy.get('.react-player')
+        .should('exist')
+
+    })
   })
 })
 
@@ -59,14 +65,13 @@ describe('As a user, i should be able to return to the home page from the movie 
   it('should load home page from header click', () => {
     cy
       .get('header').click()
-      .url().should('eq', 'http://localhost:3000/')
+      .url().should('eq', 'http://localhost:3000/movies')
   })
 
   it('should go back to the last page when back button is clicked', () => {
     
     cy
       .go('back')
-      .url().should('eq', 'http://localhost:3000/627290')
+      .url().should('eq', 'http://localhost:3000/movies/627290')
   })
 })
-

@@ -1,8 +1,8 @@
 import './MoviesContainer.css';
 import MoviePoster from '../MoviePoster/MoviePoster';
-import Hero from '../Hero/Hero';
+import Error404 from '../Error404/Error404';
 
-const MoviesContainer = ({ movies, findMovie}) => {
+const MoviesContainer = ({ movies, loadingError}) => {
   const movieCards = movies.map((movie) => {
     return (
       <MoviePoster
@@ -13,18 +13,22 @@ const MoviesContainer = ({ movies, findMovie}) => {
         rating={movie.average_rating}
         release={movie.release_date}
         key={movie.id}
-        findMovie={findMovie}
+        // findMovie={findMovie}
       />
     );
   });
 
+
+
   return (
+    !loadingError ?
     <div className="background">
-      {/* <Hero /> */}
       <section className="container">
         {movieCards}
       </section>
     </div>
+    :
+    <Error404 />
   )
 };
 
