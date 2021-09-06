@@ -12,13 +12,14 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      loadingError: ''
     };
   }
 
   componentDidMount = () => {
     fetchData()
       .then(data => this.setState({ movies: data.movies}))
-      .catch(err => console.log(err, ' :err from app.js'))
+      .catch(err => this.setState({ loadingError: err.message }))
     }
     
   render() {
@@ -30,7 +31,7 @@ class App extends Component {
             <Redirect to="/movies" />
           </Route>
           <Route exact path='/movies' render={() => 
-            <MoviesContainer movies={this.state.movies} />} />
+            <MoviesContainer movies={this.state.movies} loadingError={this.state.loadingError}/>} />
           <Route exact path='/movies/:id' render={({ match }) => 
             <MovieDetailer id={parseInt(match.params.id)}/> }/>
           <Route exact path='/not-found' render={() => 
