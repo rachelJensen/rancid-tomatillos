@@ -1,6 +1,7 @@
 import './MoviesContainer.css';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import Error404 from '../Error404/Error404';
+import PropTypes from 'prop-types';
 
 const MoviesContainer = ({ movies, loadingError}) => {
   const movieCards = movies.map((movie) => {
@@ -33,3 +34,8 @@ const MoviesContainer = ({ movies, loadingError}) => {
 };
 
 export default MoviesContainer;
+
+MoviesContainer.propTypes = { 
+  movies: PropTypes.array,
+  loadingError: PropTypes.string
+}

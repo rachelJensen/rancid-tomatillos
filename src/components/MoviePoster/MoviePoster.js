@@ -1,5 +1,7 @@
 import './MoviePoster.css';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 
 const MoviePoster = ({ id, poster, title }) => {
   return (
@@ -12,3 +14,9 @@ const MoviePoster = ({ id, poster, title }) => {
 };
 
 export default MoviePoster;
+
+MoviePoster.propTypes = { 
+  id: PropTypes.number,
+  poster: PropTypes.string,
+  title: PropTypes.string
+}
