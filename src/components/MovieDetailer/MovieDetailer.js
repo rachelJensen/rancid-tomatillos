@@ -32,19 +32,28 @@ class MovieDetailer extends Component {
 
     return (
       <section className='movie-info'>
-        {this.state.video[0] && <ReactPlayer url={`https://www.youtube.com/watch?v=${this.state.video[0].key}`} />}
         <img className='backdrop' src={this.state.movie.backdrop_path} alt={this.state.movie.title}/>
-        <div className='details-box'>
-          <h2>{this.state.movie.title}</h2>
-          <p className='tagline'>{this.state.movie.tagline}</p>
-          <p className='genres'>{this.state.movie.genres}</p>
-          <p className='release'>{this.state.movie.release_date}</p>
-          <p className='overview'>{this.state.movie.overview}</p>
-          <p className='rating'>Average Rating {this.state.movie.average_rating}</p>
-          <p className='budget'>{this.state.movie.budget}</p>
-          <p className='revenue'>{this.state.movie.revenue}</p>
-          <p className='runtime'>{this.state.movie.runtime}</p>
-        </div> 
+        <div className='details-container'>
+          <div className='details-box'>
+            <h2>{this.state.movie.title}</h2>
+            <p className='tagline'>{this.state.movie.tagline}</p>
+            <p className='genres'>{this.state.movie.genres}</p>
+            <p className='release'>{this.state.movie.release_date}</p>
+            <p className='overview'>{this.state.movie.overview}</p>
+            <p className='rating'>Average Rating {this.state.movie.average_rating}</p>
+            <p className='budget'>{this.state.movie.budget}</p>
+            <p className='revenue'>{this.state.movie.revenue}</p>
+            <p className='runtime'>{this.state.movie.runtime}</p>
+          </div> 
+          {this.state.video[0] && 
+          <div className='video-wrapper'>
+            <ReactPlayer 
+              className='react-player'
+              url={`https://www.youtube.com/watch?v=${this.state.video[0].key}`}
+              width='100%'
+              height='100%' />
+          </div>}
+        </div>
       </section>
     )
   }

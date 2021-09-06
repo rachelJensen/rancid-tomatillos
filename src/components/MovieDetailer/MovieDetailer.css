@@ -1,6 +1,6 @@
 .movie-info {
   position: relative;
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 
 .backdrop {
@@ -8,13 +8,34 @@
   z-index: -1;
 }
 
-.details-box {
-  height: 40%;
-  width: 60%;
+.details-container {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   bottom: 5vh;
   left: 5vh;
+  
+}
+
+.details-box {
+  height: 40%;
+  width: 50%;
   color: white;
   background: rgba(0, 0, 0, 0.5); 
   padding: 0px 20px 20px 20px;
+}
+
+.video-wrapper {
+  width: 35%;
+  /* height: 50%; */
+  position: relative;
+  /* padding-top: 56.25%; */
+  border: 2px solid pink;
+}
+
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
