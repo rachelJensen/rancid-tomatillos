@@ -8,6 +8,17 @@ header {
   cursor: pointer;
   text-decoration: none;
   z-index: +1;
+  border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    /* padding: 0.4em; */
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem yellow,
+              0 0 0.8rem yellow,
+              0 0 2.8rem yellow,
+              inset 0 0 1.3rem yellow;
+  margin-bottom: 0px;
+
 }
 
 h1 {
@@ -15,7 +26,7 @@ h1 {
   /* font-family: 'Dancing Script', cursive; */
   /* font-family: "Sacramento", sans-serif; */
   font-family: 'Montserrat', sans-serif;
-  font-size: 4em;
+  font-size: 2.5em;
   color: white;
   text-shadow:
     0 0 7px #fff,
@@ -27,7 +38,7 @@ h1 {
     0 0 102px #bc13fe,
     0 0 151px #bc13fe;
 
-    border: 0.2rem solid #fff;
+    /* border: 0.2rem solid #fff;
     border-radius: 2rem;
     padding: 0.4em;
     box-shadow: 0 0 .2rem #fff,
@@ -35,7 +46,7 @@ h1 {
               0 0 2rem yellow,
               0 0 0.8rem yellow,
               0 0 2.8rem yellow,
-              inset 0 0 1.3rem yellow; 
+              inset 0 0 1.3rem yellow;  */
 }
 
 .homeBtn {
