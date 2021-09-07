@@ -4,6 +4,7 @@ import { fetchData } from '../../apiCalls';
 import { formatMovieDetails } from '../../Utils';
 import { Redirect } from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
+import Error404 from '../Error404/Error404';
 
 class MovieDetailer extends Component { 
   constructor() {
@@ -27,7 +28,7 @@ class MovieDetailer extends Component {
  
   render = () => {
     if (this.props.id === NaN || this.state.error) {
-      return  <Redirect to='/not-found' />
+      return  <Error404 errorType={this.state.error} />
     }
 
     return (

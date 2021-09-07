@@ -19,7 +19,10 @@ class App extends Component {
   componentDidMount = () => {
     fetchData()
       .then(data => this.setState({ movies: data.movies}))
-      .catch(err => this.setState({ loadingError: err.message }))
+      .catch(err => {
+        this.setState({ loadingError: err })
+      })
+ 
     }
     
   render() {
@@ -34,10 +37,8 @@ class App extends Component {
             <MoviesContainer movies={this.state.movies} loadingError={this.state.loadingError}/>} />
           <Route exact path='/movies/:id' render={({ match }) => 
             <MovieDetailer id={parseInt(match.params.id)}/> }/>
-          <Route exact path='/not-found' render={() => 
-            <Error404 />} />
           <Route path='*' render={() => 
-            <Error404 />} />
+            <Error404 errorType={'error 404'}/>} />
         </Switch>
       </main>
     );
@@ -45,9 +46,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Rachel - error handling (stlying eror page)
-// Steven - stlying on home page with neon 
-// Steven - embed movies onto page
-// Rachel - cypress testing
-// - proptypes
