@@ -5,17 +5,18 @@ describe('404 not found page', () => {
     })
   });
   
-  it('should redirect to the not found page if movie id is invalid', () => {
+  it('should show the 404 page not found error if movie id is invalid', () => {
     cy.visit('http://localhost:3000/movies/622')
     cy
-      .url().should('eq', 'http://localhost:3000/not-found')
+      .get('h3').contains('Page Not Found')
   })
 
   it('should show the 404 not found message if an invalid path is given', () => {
-    cy.visit('http://localhost:3000/about')
+    cy.visit('http://localhost:3000/blerg')
     cy
-      .url().should('eq', 'http://localhost:3000/about')
+      .url().should('eq', 'http://localhost:3000/blerg')
       .get('h2').contains('404')
+      .get('h3').contains('Page Not Found')
   })
 
   it('should display error message 404 Page Not Found', () => {
@@ -33,7 +34,7 @@ describe('server failure', () => {
       url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/627290'
     },
     {
-      status: 500,
+      statusCode: 500,
       ok: false,
       body: { 
         message: `Our servers are down.` 
@@ -41,7 +42,8 @@ describe('server failure', () => {
     })
 
     cy.visit('http://localhost:3000/movies/627290')
-    cy.url().should('eq', 'http://localhost:3000/not-found')
+    cy
+      .get('h3').contains('Please try again later')
   })
 
   it('should display an error message if the server doesn\'t return all movies', () => {
@@ -50,14 +52,14 @@ describe('server failure', () => {
       url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
     },
     {
-      status: 500,
+      statusCode: 500,
       ok: false,
       body: { 
         message: `Our servers are down.` 
       }
     })
 
-    // cy.visit('http://localhost:3000/movies')
-    //   .get('h2').contains('404')
+    cy.visit('http://localhost:3000/movies')
+      .get('h2').contains('Something went wrong')
   })
 })
