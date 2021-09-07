@@ -22,7 +22,6 @@
 
 @keyframes pulsate {
   100% {
-    /* Larger blur radius */
     text-shadow:
       0 0 4px #fff,
       0 0 11px #fff,
