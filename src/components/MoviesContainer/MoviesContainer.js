@@ -4,8 +4,6 @@ import Error404 from '../Error404/Error404';
 import PropTypes from 'prop-types';
 
 const MoviesContainer = ({ movies, loadingError}) => {
-
-
   const movieCards = movies.map((movie) => {
     return (
       <MoviePoster
@@ -19,8 +17,6 @@ const MoviesContainer = ({ movies, loadingError}) => {
       />
     );
   });
-
-
 
   return (
     (!loadingError) ?

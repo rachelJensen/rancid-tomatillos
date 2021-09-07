@@ -2,7 +2,6 @@ import './MovieDetailer.css';
 import React, { Component } from 'react';
 import { fetchData } from '../../apiCalls';
 import { formatMovieDetails } from '../../Utils';
-import { Redirect } from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
 import Error404 from '../Error404/Error404';
 

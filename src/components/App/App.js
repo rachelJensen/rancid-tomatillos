@@ -22,7 +22,6 @@ class App extends Component {
       .catch(err => {
         this.setState({ loadingError: err })
       })
- 
     }
     
   render() {

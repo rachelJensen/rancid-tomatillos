@@ -12,5 +12,4 @@ export const fetchData = (endpoint) => {
       return Promise.reject(`error ${res.status}`)
     }
   })
-  // .then(data => data)
 }
