@@ -1,70 +1,65 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rancid Tomatillos
 
-## Available Scripts
+### Table of Contents
+- [Overview](#overview-and-project-goals)
+- [Installation & Viewing](#installation-and-viewing)
+- [Learning Goals](#learning-goals)
+- [Technologies Used](#technologies-used)
+- [Future Additions](#future-additions)
+- [Contributors](#contributors)
 
-In the project directory, you can run:
+## Overview and Project Goals 
 
-### `npm start`
+The goal of this Mod3 paired [project](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) was to practice our skills in React. Build an app with SRP and using the component based framework and the incorporation of Cypress end-to-end testing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation and Viewing 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<a href="https://ibb.co/VDqNzsz"><img src="https://i.ibb.co/RPDSsqs/Screen-Shot-2021-09-06-at-10-08-11-PM.png" alt="Screen-Shot-2021-09-06-at-10-08-11-PM" border="0"></a>
 
-### `npm test`
+<a href="https://ibb.co/R0jQnW3"><img src="https://i.ibb.co/QNDYBGP/Screen-Shot-2021-09-06-at-10-08-24-PM.png" alt="Screen-Shot-2021-09-06-at-10-08-24-PM" border="0"></a><br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To view our application on your local device:
 
-### `npm run build`
+- Clone down this repository
+- Run `npm i` in your terminal
+- Run `npm start` in your terminal
+- To view Cypress tests open a separate tab in your terminal and run `npm run cypress`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Learning Goals
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To solidify and demonstrate the understanding of:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The ability to independently learn a new technology
+- Building a frontend using React to display data
+- Create multi page web application with React Router
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Technologies Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p text-align="center"> 
+    <img alt="React Badge" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)" />
+    <img alt="JavaScript Badge" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" />
+    <img alt="HTML5 Badge" src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square" />
+    <img alt="CSS3 Badge" src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" />
+    <img alt="Cypress Badge" src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" />
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Additions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- *Movie Carousel to display all the movie trailers
+- *Add rating system so that users can upvote and down vote movies once they are logged in 
+- *Live search bar to search through the movie database
 
-## Learn More
+### Want to Contribute?
+If you would like to contribute, please fork this repository and clone it down to your local machine. Once you've successfully implemented the changes in code necessary for your intended contribution without changing any of the current functionality of main, submit a pull request for authors to review the changes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributors
+### Authors
+- [Rachel Jensen](https://github.com/rachelJensen)
+- [Steven Berg](https://github.com/saberg1)
 
-### Code Splitting
+**************************************************************************
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**[Back to top](#table-of-contents)**
