@@ -4,7 +4,7 @@ header {
   position: fixed;
   top: 0;
   background: black;
-  width: 100%;
+  width: 99%;
   cursor: pointer;
   text-decoration: none;
   z-index: +1;
@@ -18,7 +18,7 @@ header {
               0 0 2.8rem yellow,
               inset 0 0 1.3rem yellow;
   margin-bottom: 0px;
-
+  margin-top: 10px;
 }
 
 h1 {
