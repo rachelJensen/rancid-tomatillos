@@ -14,6 +14,7 @@
 The goal of this Mod3 paired [project](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) was to practice our skills in React. Build an app with SRP and using the component based framework and the incorporation of Cypress end-to-end testing.
 
 ## Installation and Viewing 
+(Deployed App)[https://racheljensen.github.io/rancid-tomatillos/]
 
 <a href="https://ibb.co/VDqNzsz"><img src="https://i.ibb.co/RPDSsqs/Screen-Shot-2021-09-06-at-10-08-11-PM.png" alt="Screen-Shot-2021-09-06-at-10-08-11-PM" border="0"></a>
 
