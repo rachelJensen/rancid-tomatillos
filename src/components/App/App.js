@@ -29,12 +29,12 @@ class App extends Component {
       <main className="main">
         <Header  /> 
         <Switch>
-          <Route exact path="/">
-            <Redirect to="/movies" />
+          <Route exact path="/rancid-tomatillos/">
+            <Redirect to="/rancid-tomatillos/movies" />
           </Route>
-          <Route exact path='/movies' render={() => 
+          <Route exact path='/rancid-tomatillos/movies' render={() => 
             <MoviesContainer movies={this.state.movies} loadingError={this.state.loadingError}/>} />
-          <Route exact path='/movies/:id' render={({ match }) => 
+          <Route exact path='/rancid-tomatillos/movies/:id' render={({ match }) => 
             <MovieDetailer id={parseInt(match.params.id)}/> }/>
           <Route path='*' render={() => 
             <Error404 errorType={'error 404'}/>} />
