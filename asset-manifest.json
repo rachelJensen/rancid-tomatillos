@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rancid-tomatillos/movies/static/css/main.9e593ec4.chunk.css",
-    "main.js": "/rancid-tomatillos/movies/static/js/main.07e14367.chunk.js",
-    "main.js.map": "/rancid-tomatillos/movies/static/js/main.07e14367.chunk.js.map",
-    "runtime-main.js": "/rancid-tomatillos/movies/static/js/runtime-main.42804d68.js",
-    "runtime-main.js.map": "/rancid-tomatillos/movies/static/js/runtime-main.42804d68.js.map",
-    "static/js/2.7d6df524.chunk.js": "/rancid-tomatillos/movies/static/js/2.7d6df524.chunk.js",
-    "static/js/2.7d6df524.chunk.js.map": "/rancid-tomatillos/movies/static/js/2.7d6df524.chunk.js.map",
-    "static/js/3.c7baceb4.chunk.js": "/rancid-tomatillos/movies/static/js/3.c7baceb4.chunk.js",
-    "static/js/3.c7baceb4.chunk.js.map": "/rancid-tomatillos/movies/static/js/3.c7baceb4.chunk.js.map",
-    "index.html": "/rancid-tomatillos/movies/index.html",
-    "static/css/main.9e593ec4.chunk.css.map": "/rancid-tomatillos/movies/static/css/main.9e593ec4.chunk.css.map",
-    "static/js/2.7d6df524.chunk.js.LICENSE.txt": "/rancid-tomatillos/movies/static/js/2.7d6df524.chunk.js.LICENSE.txt"
+    "main.css": "/rancid-tomatillos/static/css/main.9e593ec4.chunk.css",
+    "main.js": "/rancid-tomatillos/static/js/main.7acc5475.chunk.js",
+    "main.js.map": "/rancid-tomatillos/static/js/main.7acc5475.chunk.js.map",
+    "runtime-main.js": "/rancid-tomatillos/static/js/runtime-main.a67a1113.js",
+    "runtime-main.js.map": "/rancid-tomatillos/static/js/runtime-main.a67a1113.js.map",
+    "static/js/2.7d6df524.chunk.js": "/rancid-tomatillos/static/js/2.7d6df524.chunk.js",
+    "static/js/2.7d6df524.chunk.js.map": "/rancid-tomatillos/static/js/2.7d6df524.chunk.js.map",
+    "static/js/3.c7baceb4.chunk.js": "/rancid-tomatillos/static/js/3.c7baceb4.chunk.js",
+    "static/js/3.c7baceb4.chunk.js.map": "/rancid-tomatillos/static/js/3.c7baceb4.chunk.js.map",
+    "index.html": "/rancid-tomatillos/index.html",
+    "static/css/main.9e593ec4.chunk.css.map": "/rancid-tomatillos/static/css/main.9e593ec4.chunk.css.map",
+    "static/js/2.7d6df524.chunk.js.LICENSE.txt": "/rancid-tomatillos/static/js/2.7d6df524.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.42804d68.js",
+    "static/js/runtime-main.a67a1113.js",
     "static/js/2.7d6df524.chunk.js",
     "static/css/main.9e593ec4.chunk.css",
-    "static/js/main.07e14367.chunk.js"
+    "static/js/main.7acc5475.chunk.js"
   ]
 }
