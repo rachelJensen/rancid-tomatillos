@@ -6,7 +6,7 @@ const Error404 = ({ errorType }) => {
   let line2 = (errorType === 'error 404') ? 'Page Not Found' : 'Please try again later'
   
   return (
-      <Link to="*" >
+      <Link className="link" to="/rancid-tomatillos/movies" >
         <section className="error">
           <div className="error-message">
             <h2 className='neon-error'>{line1}</h2>
